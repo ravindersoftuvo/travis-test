@@ -1,4 +1,5 @@
 dist: xenial
+
 sudo: required
 
 language: php
@@ -30,6 +31,11 @@ cache:
 addons:
 
   apt:
+    
+    sources:
+
+      - ppa:ondrej/apache2
+
     packages:
 
       - php7.2
