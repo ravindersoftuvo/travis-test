@@ -8,10 +8,7 @@ notifications:
   email: false
 
 php:
-  - '7.0'
-  - '7.1'
   - '7.2'
-  - nightly
 
 matrix:
   fast_finish: true
@@ -49,8 +46,8 @@ cache:
 
 env:
   global:
-    - SITE_URL="http://site.localhost"
-    - SITE_DOMAIN="site.localhost"
+    - SITE_URL="http://localhost"
+    - SITE_DOMAIN="localhost"
     - DB_NAME="test"
 
 before_install:
