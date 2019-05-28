@@ -41,7 +41,7 @@ cache:
 #      - nginx
 
   hosts:
-    - site.localhost
+    - localhost
     - test1.site.localhost
 
 env:
@@ -82,4 +82,4 @@ before_script:
 
 script:
   # finally run the tests...
-  - curl http://site.localhost
+  - curl http://localhost
