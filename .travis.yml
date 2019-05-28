@@ -14,8 +14,8 @@ php:
 matrix:
   fast_finish: true
 
-  allow_failures:
-    - php: nightly
+#  allow_failures:
+#    - php: nightly
 
 services:
   - mysql
@@ -31,6 +31,7 @@ addons:
   apt:
     packages:
 
+      - php7.2
       - php7.2-fpm
       - php7.2-mysql
       - nginx
@@ -47,6 +48,9 @@ env:
 
 before_install:
   - mysql -e "create database IF NOT EXISTS $DB_NAME;" -uroot
+  - sudo apt-get install software-properties-common python-software-properties -y
+  - sudo add-apt-repository -y ppa:ondrej/php
+  - sudo apt-get update
 
 install:
   - composer install --prefer-dist
