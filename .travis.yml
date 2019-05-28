@@ -28,20 +28,20 @@ cache:
     - vendor
     - $HOME/.composer/cache/files
 
-addons:
-
-  apt:
-    
-    sources:
-
-      - ppa:ondrej/apache2
-
-    packages:
-
-      - php7.2
-      - php7.2-fpm
-      - php7.2-mysql
-      - nginx
+#addons:
+#
+# apt:
+#    
+#    sources:
+#
+#     - ppa:ondrej/apache2
+#
+#    packages:
+#
+#      - php7.2
+#      - php7.2-fpm
+#      - php7.2-mysql
+#      - nginx
 
   hosts:
     - site.localhost
@@ -58,6 +58,7 @@ before_install:
   - sudo apt-get install software-properties-common python-software-properties -y
   - sudo add-apt-repository -y ppa:ondrej/php
   - sudo apt-get update
+  - sudo apt-get install php7.2-curl php7.2-gd php7.2-json php7.2-mbstring php7.2-intl php7.2-mysql php7.2-xml php7.2-zip nginx php7.2-fpm -y
 
 install:
   - composer install --prefer-dist
